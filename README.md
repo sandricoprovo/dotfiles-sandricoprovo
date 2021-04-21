@@ -31,10 +31,17 @@ ln -s /Users/sandricoprovo/.dotfiles/.starship.toml /Users/sandricoprovo/.starsh
 4. **Install homebrew & software inside the Brewfile**
 ```
 /bin/bash -c "$(curl -fsSl https://raw.githubusercontent/com/Homebrew/install/HEAD/install.sh)"
+
 brew bundle --file ~/.dotfiles/Brewfile
 ```
 
 ## More TODOs
-1. Setup Visual Studio Code
+1. Install Node & NPM via NVM
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
+
+nvm install --lts
+```
+2. Setup Visual Studio Code
    1. Download vscode via website or homebrew
    2. turn on settings sync & use microsoft account to sign in
