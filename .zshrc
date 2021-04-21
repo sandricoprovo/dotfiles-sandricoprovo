@@ -9,6 +9,10 @@
 export ZSH="/Users/sandricoprovo/.oh-my-zsh"
 export PATH=${PATH}:/usr/local/mysql/bin/:${HOME}/.composer/vendor/bin:${HOME}/.dotnet/tools
 
+# Custom Environment Variables
+# Starship Command Prompt
+export STARSHIP_CONFIG=~/.starship.toml
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
