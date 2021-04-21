@@ -24,6 +24,8 @@ brew "pv"
 brew "starship"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Application launcher and productivity software
+cask "alfred"
 cask "font-hack-nerd-font"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"

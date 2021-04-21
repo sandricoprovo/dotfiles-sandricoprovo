@@ -35,5 +35,4 @@ brew bundle --file ~/.dotfiles/Brewfile
 ```
 
 ## More TODOs
-1. Install Alfred spotlight replacement
-2. Install Visual Studio Code
+1. Install Visual Studio Code
