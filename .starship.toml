@@ -1,0 +1,14 @@
+# Disable the newline at the start of the prompt
+add_newline = true
+
+[character]
+success_symbol = "[❯](bold #82c0e9)"
+
+[directory]
+style = "bold #98e7fc"
+
+[git_branch]
+style = "bold #a295d0"
+
+[nodejs]
+disabled = true
