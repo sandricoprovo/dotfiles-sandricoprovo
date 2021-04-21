@@ -35,4 +35,6 @@ brew bundle --file ~/.dotfiles/Brewfile
 ```
 
 ## More TODOs
-1. Install Visual Studio Code
+1. Setup Visual Studio Code
+   1. Download vscode via website or homebrew
+   2. turn on settings sync & use microsoft account to sign in
