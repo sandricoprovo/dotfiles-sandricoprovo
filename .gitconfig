@@ -1,5 +1,5 @@
 [core]
-	editor = open -W -n
+	editor = code --wait
 [user]
 	name = Sandrico Provo
 	email = Sprovo@outlook.com
