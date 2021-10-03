@@ -11,13 +11,12 @@ export PATH=${PATH}:/usr/local/mysql/bin/:${HOME}/.composer/vendor/bin:${HOME}/.
 
 # Custom Environment Variables
 # Starship Command Prompt
-export STARSHIP_CONFIG=~/.starship.toml
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -96,7 +95,6 @@ export NVM_DIR="$HOME/.nvm"
 # Changes the default prompt for the terminal when using zsh.
 
 # Starship Prompt Config
-eval "$(starship init zsh)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
