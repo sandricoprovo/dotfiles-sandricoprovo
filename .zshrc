@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -91,6 +96,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # User configuration
+# - Starship
+eval "$(starship init zsh)"
+
 
 # Changes the default prompt for the terminal when using zsh.
 
@@ -128,5 +136,8 @@ alias ejectt5="sh /Users/sandricoprovo/WebDev/Scripts/ejectt5Script.sh"
 alias archiver="/Users/sandricoprovo/WebDev/Scripts/archiveScript.sh"
 alias newproject="sh /Users/sandricoprovo/WebDev/Scripts/createNewProject.sh"
 alias addeslint="npx install-peerdeps --dev eslint-config-sandricoprovo"
-alias removeeslint="npm remove eslint-config-sandricoprovo babel-eslint eslint eslint-config-prettier eslint-config-airbnb eslint-plugin-html eslint-plugin-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react prettier eslint-plugin-react-hooks
-"
+alias removeeslint="eslint-config-sandricoprovo @babel-core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-config-airbnb-typescript typescript eslint eslint-config-prettier eslint-config-airbnb eslint-plugin-html eslint-plugin-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react prettier eslint-plugin-react-hooks"
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
