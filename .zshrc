@@ -1,8 +1,5 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,6 +10,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sandricoprovo/.oh-my-zsh"
 export PATH=${PATH}:/usr/local/mysql/bin/:${HOME}/.composer/vendor/bin:${HOME}/.dotnet/tools
+
+# GOLANG Paths
+export GOROOT=/usr/local/go # SDK Location
+export GOPATH=$HOME/code/go # Workspace Root
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Custom Environment Variables
 # Starship Command Prompt
@@ -99,6 +101,9 @@ export NVM_DIR="$HOME/.nvm"
 # - Starship
 eval "$(starship init zsh)"
 
+# Prettier
+export PRETTIER_PATH="$HOME/.prettier"
+export PATH="$PATH:$PRETTIER_PATH"
 
 # Changes the default prompt for the terminal when using zsh.
 
@@ -124,20 +129,31 @@ eval "$(starship init zsh)"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Global Docker Commands
+function docker:wipe() {
+    docker kill $(docker ps -q)
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker iamge -a -q)
+    docker volume prune --force
+}
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias runt5="sudo lsof /Volumes/SPROVO_T5"
-alias openzsh="code ~/.zshrc"
-alias openhyper="code ~/.hyper.js"
-alias srczsh="source ~/.zshrc"
-alias awscreds="code ~/.aws"
-alias ejectt5="sh /Users/sandricoprovo/WebDev/Scripts/ejectt5Script.sh"
-alias archiver="/Users/sandricoprovo/WebDev/Scripts/archiveScript.sh"
-alias newproject="sh /Users/sandricoprovo/WebDev/Scripts/createNewProject.sh"
-alias addeslint="npx install-peerdeps --dev eslint-config-sandricoprovo"
-alias removeeslint="eslint-config-sandricoprovo @babel-core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-config-airbnb-typescript typescript eslint eslint-config-prettier eslint-config-airbnb eslint-plugin-html eslint-plugin-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react prettier eslint-plugin-react-hooks"
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+alias zsh:src="source ~/.zshrc"
+alias zsh:edit="code ~/.zshrc"
+alias add:eslint:root="pnpm add -wD eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
+alias add:eslint="pnpm add -D eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
+alias remove:eslint="pnpm uninstall -r eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
+alias aws:creds="code ~/.aws"
+
+# Git Alias
+alias git:linecount="git ls-files | xargs wc -l"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/sandricoprovo/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
