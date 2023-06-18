@@ -152,7 +152,7 @@
         "command": "workbench.view.extension.test"
     },
     {
-        "key": "ctrl+alt+m",
+        "key": "ctrl+alt+i",
         "command": "editor.action.goToImplementation"
     },
     {
