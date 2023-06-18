@@ -154,5 +154,9 @@
     {
         "key": "ctrl+alt+m",
         "command": "editor.action.goToImplementation"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "editor.action.showHover"
     }
 ]
