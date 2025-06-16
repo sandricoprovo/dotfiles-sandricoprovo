@@ -1,0 +1,39 @@
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-i": "editor::GoToImplementation",
+            "cmd-d": "menu::SelectNext",
+            "cmd-j": "editor::ScrollCursorCenter",
+            "cmd-h": "editor::Hover",
+            "cmd-l": "go_to_line::Toggle",
+            "cmd-o": "outline::Toggle",
+            "alt-up": "editor::MoveLineUp",
+            "alt-down": "editor::MoveLineDown",
+            "editor::CutToEndOfLine": "editor::DeleteLine",
+            "ctrl-alt-up": "editor::SelectLargerSyntaxNode",
+            "ctrl-alt-down": "editor::SelectSmallerSyntaxNode",
+            "ctrl-alt-right": "pane::SplitRight",
+            "cmd-/": "editor::ToggleComments",
+            "alt-ctrl-h": "editor::Hover",
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "cmd-b": "workspace::ToggleRightDock",
+            "cmd-r": "workspace::ToggleLeftDock",
+            "cmd-t": "tab_switcher::Toggle",
+            "shift-cmd-g": "git_panel::ToggleFocus",
+            "alt-shift-cmd-c": "workspace::CopyRelativePath",
+            "alt-ctrl-l": [
+                "workspace::SendKeystrokes",
+                "cmd-d cmd-c end enter console.log('💬 space cmd-v space :' , space { space cmd-v space } ) escape"
+            ]
+        }
+    },
+    {
+        "context": "BufferSearchBar",
+        "bindings": {}
+    }
+]

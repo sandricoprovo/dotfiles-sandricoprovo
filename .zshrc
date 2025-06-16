@@ -9,12 +9,12 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sandricoprovo/.oh-my-zsh"
-export PATH=${PATH}:/usr/local/mysql/bin/:${HOME}/.composer/vendor/bin:${HOME}/.dotnet/tools
+export PATH=${PATH}:/usr/local/mysql/bin/mysql:${HOME}/.composer/vendor/bin:${HOME}/.dotnet/tools
 
-# GOLANG Paths
-export GOROOT=/usr/local/go # SDK Location
-export GOPATH=$HOME/code/go # Workspace Root
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# GOLANG Paths - not sure these are needed anymore
+# export GOROOT=/usr/local/go # SDK Location
+# export GOPATH=$HOME/code/go # Workspace Root
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Custom Environment Variables
 # Starship Command Prompt
@@ -97,10 +97,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# User configuration
-# - Starship
-eval "$(starship init zsh)"
-
 # Prettier
 export PRETTIER_PATH="$HOME/.prettier"
 export PATH="$PATH:$PRETTIER_PATH"
@@ -108,6 +104,7 @@ export PATH="$PATH:$PRETTIER_PATH"
 # Changes the default prompt for the terminal when using zsh.
 
 # Starship Prompt Config
+eval "$(starship init zsh)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -137,15 +134,26 @@ function docker:wipe() {
     docker volume prune --force
 }
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zsh:src="source ~/.zshrc"
-alias zsh:edit="code ~/.zshrc"
-alias add:eslint:root="pnpm add -wD eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
-alias add:eslint="pnpm add -D eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
-alias remove:eslint="pnpm uninstall -r eslint-config-sandricoprovo @babel/core @babel/eslint-parser @babel/preset-react @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-import-resolver-typescript eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks typescript"
+# Aliases
+alias zsh:src="source /Users/sandricoprovo/.zshrc"
+alias zsh:edit="code /Users/sandricoprovo/.zshrc"
+alias gsl="git stash list"
+alias gsp="git stash push -u -m"
+alias gsw="git switch"
+alias gss="git status"
+alias gaa="git add ."
+alias gsa="gaa && gss"
+
+# AWS
 alias aws:creds="code ~/.aws"
+
+# Coding
+alias convert:oklch="pnpx convert-to-oklch ./src/**/*.css"
+
+# Databses
+
+# Golang Package Aliases
+alias air="~/code/go/bin/air"
 
 # Git Alias
 alias git:linecount="git ls-files | xargs wc -l"

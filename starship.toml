@@ -1,0 +1,14 @@
+# Autocomplete
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Config
+add_newline = true
+
+[aws]
+disabled = true
+
+[golang]
+format = 'via [$version($mod_version)]($style)'
+
+[nodejs]
+format = 'via [$symbol$version](bold green) '

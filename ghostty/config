@@ -1,0 +1,18 @@
+# This is the configuration file for Ghostty.
+# @: /Users/sandricoprovo/.config/ghostty/config
+
+# Styles
+theme = MaterialDarker
+font-family = "Cascadia Code"
+font-size = 16
+macos-titlebar-style = transparent
+
+# Cursor / Mouse
+cursor-style = block
+cursor-color = "#ffc600"
+mouse-hide-while-typing = true
+
+# Spacing
+window-padding-x = 16
+adjust-cell-height = 8
+adjust-cursor-thickness = 8
