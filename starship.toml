@@ -19,10 +19,11 @@ symbol = ' '
 format = 'on [$symbol$branch(:$remote_branch)]($style) '
 
 [git_status]
+format = "([$all_status$ahead_behind](bold #ffc600) )"
 ahead = '➡️${count}'
 diverged = '➡️${ahead_count}⬅️${behind_count}'
 behind = '⬅️${count}'
-staged = '🟢+$count'
+staged = '±$count'
 
 [golang]
 format = 'via [$version($mod_version)]($style)'

@@ -86,10 +86,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   vscode
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  fast-syntax-highlighting
-  zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -145,6 +141,8 @@ alias gsw="git switch"
 alias gss="git status"
 alias gaa="git add ."
 alias gsa="gaa && gss"
+alias gpu="git push"
+alias gcm="git commit -m"
 
 # AWS
 alias aws:creds="code ~/.aws"
